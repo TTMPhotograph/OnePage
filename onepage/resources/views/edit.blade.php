@@ -5,8 +5,9 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Laravel</title>
+        <title>400文字の小説投稿サイト OnePage</title>
         <link href="{{asset('/css/bootstrap.min.css')}}" rel="stylesheet">
+        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
 
@@ -65,39 +66,34 @@
         </style>
     </head>
     <body>
-    <nav>
-        <div class="navbar navbar-default navbar-fixed-top">
-            <div class="navbar-header"><a class="navbar-brand" href="#">OnaPage</a></div>
-            <ul class="nav navbar-nav">
-                    <li><a href="#" title="Sing in"><i class="fa fa-key" aria-hidden="true"></i> Log in</a></li>
-              </ul>
+<header id="header">
+<nav>
+    <div class="navbar navbar-default navbar-fixed-top">
+    <div class="container-fluid">
+       <!-- Brand and toggle get grouped for better mobile display -->
+       <div class="navbar-header">
+         <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+           <span class="sr-only">Toggle navigation</span>
+           <span class="icon-bar"></span>
+           <span class="icon-bar"></span>
+           <span class="icon-bar"></span>
+         </button>
+         <a class="navbar-brand" href="#">OnaPage</a>
+    </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav">
+         <li class="active"><a href="#"><i class="fa fa-home" aria-hidden="true"></i> </a></li>
+         <li><a href="#"><i class="fa fa-pencil" aria-hidden="true"></i> 小説投稿</a></li>
+         <li><a href="#"><i class="fa fa-book" aria-hidden="true"></i> 本棚</a></li>
+         <li><a href="#"><i class="fa fa-cog" aria-hidden="true"></i> 設定</a></li>
+          </ul>
         </div>
-    </nav>
-        <div class="flex-center position-ref full-height">
-            @if (Route::has('login'))
-                <div class="top-right links">
-                    @auth
-                        <a href="{{ url('/home') }}">Home</a>
-                    @else
-                        <a href="{{ route('login') }}">Login</a>
-                        <a href="{{ route('register') }}">Register</a>
-                    @endauth
-                </div>
-            @endif
-
-            <div class="content">
-                <div class="title m-b-md">
-                    Laravel
-                </div>
-
-                <div class="links">
-                    <a href="https://laravel.com/docs">Documentation</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
-                </div>
-            </div>
-        </div>
+    </div>
+</nav>    
+</header>
+<!-- /header -->
+     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+       <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+     <script src="{{asset('/js/bootstrap.min.js')}}" type="text/javascript" charset="utf-8" async defer></script>
     </body>
 </html>

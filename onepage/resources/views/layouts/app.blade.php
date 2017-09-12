@@ -16,12 +16,6 @@
 	<!-- Styles -->
 	<style>
 
-		.navbar-brand,.logo{
-			font-family: 'Noto400 Serif', serif;
-			color: #636b6f!important;
-			font-weight: 400;
-			font-style: italic;
-		}
 	</style>
 </head>
 <body>
@@ -38,7 +32,7 @@
 							<span class="icon-bar"></span>
 						</button>
 						 <a href=" @if (Auth::guest()){{ url('/') }}@else{{ url('/bookshelf') }}@endif" class="navbar-brand logo">
-						 	OnaPage <i class="fa fa-pencil" aria-hidden="true"></i>
+						 	OnePage <i class="fa fa-pencil" aria-hidden="true"></i>
 						  </a>
 					</div>
 					<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">

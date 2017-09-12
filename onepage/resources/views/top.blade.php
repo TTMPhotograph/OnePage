@@ -3,9 +3,6 @@
 400文字の小説投稿サイト OnePage
 @endsection
 @section('navbar')
-<p class="navbar-text">
-    ようこそ400文字の小説投稿サイト OnePageへ
-</p>
  <ul class="nav navbar-nav navbar-right">
  <li><a href="{{url('/auth/twitter')}}"><i class="fa fa-key" aria-hidden="true"></i>Login</a></li>
  </ul>

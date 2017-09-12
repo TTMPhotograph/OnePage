@@ -5,7 +5,7 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-	<title>@yield('title')</title>
+	<title>@yield('title') - 400文字の小説投稿サイト OnePage </title>
 	<link href="{{asset('/css/bootstrap.min.css')}}" rel="stylesheet">
 	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 	<link rel="stylesheet" type="text/css" href="{{asset('style.css')}}">
@@ -37,9 +37,18 @@
 							<span class="icon-bar"></span>
 							<span class="icon-bar"></span>
 						</button>
-						<a class="navbar-brand" href="/">OnaPage <i class="fa fa-pencil" aria-hidden="true"></i> </a>
+						 <a href=" @if (Auth::guest()){{ url('/') }}@else{{ url('/bookshelf') }}@endif" class="navbar-brand logo">
+						 	OnaPage <i class="fa fa-pencil" aria-hidden="true"></i>
+						  </a>
 					</div>
 					<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+						@if(Auth::guest())<p class="navbar-text">
+								ようこそ400文字の小説投稿サイト 
+								<a href=" @if (Auth::guest()){{ url('/') }}@else{{ url('/bookshelf') }}@endif" class="logo">
+									OnaPage <i class="fa fa-pencil" aria-hidden="true"></i>
+								 </a>へ
+							</p>
+						@endif
 						@yield('navbar')
 					</div>
 				</div>
@@ -54,7 +63,7 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-md-12">
-						<a class="logo" href="#">&copy; OnaPage <i class="fa fa-pencil" aria-hidden="true"></i> </a>
+						<a href="#">&copy; OnaPage <i class="fa fa-pencil" aria-hidden="true"></i> </a>
 					</div>
 				</div>
 			</div>
@@ -62,5 +71,6 @@
 		<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 		<script src="{{asset('/js/bootstrap.min.js')}}" type="text/javascript" charset="utf-8" async defer></script>
+		<script src="{{asset('/js/onepage.js')}}" type="text/javascript" charset="utf-8" async defer></script>
 	</body>
 	</html>

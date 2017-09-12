@@ -1,18 +1,16 @@
 @extends('layouts.app')
 @section('title')
-400文字の小説投稿サイト OnePage
 @endsection
 @section('navbar')
-<p class="navbar-text">
-    ようこそ400文字の小説投稿サイト OnePageへ
-</p>
+<ul class="navbar-nav nav">
+  <li> <a href="/writing" title="新規投稿する"><i class="fa fa-pencil-square-o" aria-hidden="true"></i><small>投稿</small></a></li>
+</ul>
  <ul class="nav navbar-nav navbar-right">
  <li class="navbar-text">作者: {{Auth::User()->name}} </li>
  <li class="dropdown">
            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-cog" aria-hidden="true"></i> <span class="caret"></span></a>
            <ul class="dropdown-menu">
      <li><a href="#"></a></li>
-             <li><a href="#">Another action</a></li>
              <li><a href="#"><i class="glyphicon glyphicon-floppy-save"></i>CSVダウンロード</a></li>
              <li role="separator" class="divider"></li>
              <li><a href="/logout"><i class="fa fa-sign-out" aria-hidden="true"></i> Log Out</a></li>

@@ -12,8 +12,10 @@
 */
 /*トップページ表示*/
 Route::get('/', 'TopController@index');
-/*新規投稿または編集ページ表示*/
-Route::get('/edit','HomeController@doEdit');
+/*新規投稿*/
+Route::get('/writing','WritingController@doWriting');
+/*または編集ページ表示*/
+Route::get('/edit','WritingController@doEdit');
 // ログアウト処理のルーティング
 Route::get('/logout', array('uses' => 'HomeController@doLogout'));
 Auth::routes();

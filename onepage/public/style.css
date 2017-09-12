@@ -21,21 +21,30 @@ body {
     line-height: 2.5;
 }
 
-/*ナビゲーション*/
+/*ナビゲーション
+-------------------------------------------------- */
 .navbar {
   min-height: 40px !important
 }
 
 .navbar-brand {
-  height: 40px;
-  padding: 10px 15px;
+  height: 50px;
+  padding: 13px 15px 10px;
 }
 .navbar-text{
-  margin:10px 0 0;
+  margin:15px 0 0;
 }
 .navbar-nav > li > a {
-  padding-top: 10px !important;
-  padding-bottom: 10px !important;
+  padding-top: 15px !important;
+  padding-bottom: 5px !important;
   margin-top: 0!important;
   margin-bottom: 5px!important;
+}
+/*レイアウト
+-------------------------------------------------- */
+.m-t15{
+  margin-top: 15px;
+}
+.m-t30{
+  margin-top: 30px;
 }

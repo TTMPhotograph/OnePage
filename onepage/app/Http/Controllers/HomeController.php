@@ -28,10 +28,7 @@ class HomeController extends Controller
     {
         return view('bookshelf');
     }
-    /*投稿編集ページ*/
-    public function doEdit() {
-        return view('edit');
-    }
+  
     //ログアウト
     public function doLogout()
     {

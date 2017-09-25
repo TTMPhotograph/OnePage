@@ -3,9 +3,6 @@
 400文字の小説投稿サイト OnePage
 @endsection
 @section('navbar')
- <ul class="nav navbar-nav navbar-right">
- <li><a href="{{url('/auth/twitter')}}"><i class="fa fa-key" aria-hidden="true"></i>Login</a></li>
- </ul>
 @endsection
 @section('content')
     <div class="row">
@@ -19,6 +16,7 @@
     <div class="row">
         <div class="col-md-8">
             <h2>新着投稿</h2>
+            <p>{{$user or 'nouser'}}</p>   
         </div>
         <!-- /.col-md-8 -->
         <div class="col-md-4">

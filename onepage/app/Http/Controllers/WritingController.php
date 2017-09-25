@@ -6,7 +6,6 @@
 // use Socialite;
 // use App\User;
 namespace App\Http\Controllers;
-
 use Illuminate\Http\Request;
 use App\Novel;
 use Validator;

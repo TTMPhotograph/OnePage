@@ -54,6 +54,11 @@ text-shadow: -1px 1px 0px rgba(255, 255, 255, 1);
   margin-top: 0!important;
   margin-bottom: 5px!important;
 }
+/*新規投稿、編集画面  
+-------------------------------------------------- */
+#memo{
+  background-color: #FFFDE7;
+}
 /*レイアウト
 -------------------------------------------------- */
 .m-t15{

@@ -2,7 +2,7 @@
 @section('title')
 @endsection
 @section('navbar')
-<ul class="navbar-nav nav">
+<!-- <ul class="navbar-nav nav">
   <li> <a href="/writing" title="新規投稿する"><i class="fa fa-pencil-square-o" aria-hidden="true"></i><small>投稿</small></a></li>
 </ul>
  <ul class="nav navbar-nav navbar-right">
@@ -16,7 +16,7 @@
              <li><a href="/logout"><i class="fa fa-sign-out" aria-hidden="true"></i> Log Out</a></li>
            </ul>
          </li>
- </ul>
+ </ul> -->
 @endsection
 @section('content')
 <div class="container">
@@ -26,6 +26,7 @@
                 <div class="panel-heading"> 本棚</div>
 
                 <div class="panel-body">
+                    <p>{{$username}}</p> 
                     @if (session('status'))
                         <div class="alert alert-success">
                             {{ session('status') }}

@@ -26,7 +26,8 @@ class HomeController extends Controller
     /*本棚表示投稿作品やお気に入りした作品一覧*/
     public function index()
     {
-        return view('bookshelf');
+        $username = "TESTUSER";
+        return view('bookshelf' ,compact('username'));
     }
   
     //ログアウト

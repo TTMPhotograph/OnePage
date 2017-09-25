@@ -3,22 +3,6 @@
 OnePage新規投稿
 @endsection
 @section('navbar')
-<ul class="navbar-nav nav">
-  <li> <a href="/bookshelf" title="本棚"><i class="fa fa-book" aria-hidden="true"></i><small>本棚</small></a></li>
-</ul>
- <ul class="nav navbar-nav navbar-right">
- <li class="navbar-text">作者: {{Auth::User()->name}} </li>
- <li class="dropdown">
-           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-cog" aria-hidden="true"></i> <span class="caret"></span></a>
-           <ul class="dropdown-menu">
-     <li><a href="#"></a></li>
-             <li><a href="#"></a></li>
-             <li><a href="#"><i class="glyphicon glyphicon-floppy-save"></i>CSVダウンロード</a></li>
-             <li role="separator" class="divider"></li>
-             <li><a href="/logout"><i class="fa fa-sign-out" aria-hidden="true"></i> Log Out</a></li>
-           </ul>
-         </li>
- </ul>
 @endsection
 @section('content')
     <div class="col-md-8 col-md-offset-2">
@@ -27,7 +11,7 @@ OnePage新規投稿
                <fieldset>
 
                    <!-- Form Name -->
-                   <legend>新規小説作成</legend>
+                   <legend class="logo">新規小説作成</legend>
 
                    <!-- Text input-->
                    <div class="form-group ">
@@ -41,17 +25,30 @@ OnePage新規投稿
 
                    <!-- Textarea -->
                    <div class="form-group m-t30">
-                       <label class="control-label " for="content">小説本文 </label>
-                       <p class="pull-right"><small>＊<span class="count">0</span>文字400文字以内</small></p>     <!-- /.pull-right -->
-                       <textarea class="form-control" id="content" name="content" rows="15" ></textarea>
+                       <label class="control-label pull-left" for="content">
+                       <a href data-target="#writingeditor" aria-controls="writingeditor" role="tab" data-toggle="tab">
+                       	<i class="fa fa-pencil-square" aria-hidden="true"></i>小説本文
+                       </a>/
+                       <a href data-target="#memoeditor" aria-controls="memoeditor" role="tab" data-toggle="tab">
+                       	<i class="fa fa-sticky-note-o" aria-hidden="true"></i>メモ帳
+                       </a>
+                        </label>
+                        <div class="tab-content">
+	                       <div id="writingeditor" class="tab-pane active" >
+	                       	<div class="pull-right"><small>＊<span class="count">0</span>文字400文字以内</small></div>     <!-- /.pull-right -->
+	                       	<textarea class="form-control" id="content" name="content" rows="15" ></textarea>
+	                       </div>
+	                       <!-- /.tab-pane -->
+	                       <div role="tabpanel" id="memoeditor" class="tab-pane" >
+							<textarea class="form-control bg-info" id="memo" name="memo" rows="15" ></textarea>
+	                       </div>
+	                   </div><!-- / tabs-content -->
                    </div>
                    <!-- Button (Double) -->
-                   <div class="form-group">                       
-                           <button id="button1id" name="button1id" class="btn btn-success col-xs-6">公開する</button>
-                           <button id="button2id" name="button2id" class="btn btn-danger col-xs-6">下書き保存</button>
-                   
+                   <div class="form-group">
+                           <button id="button1id" name="button1id" class="btn btn-success col-xs-5 pull-left">公開する</button>
+                           <button id="button2id" name="button2id" class="btn btn-danger col-xs-5 pull-right">下書き/メモ  保存</button>
                    </div>
-
                </fieldset>
            </form>
         </div>

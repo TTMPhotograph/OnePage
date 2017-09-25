@@ -12,7 +12,8 @@ class CreateNovels extends Migration
      * @return void
      */
     public function up()
-    {
+    {   
+        Schema::dropIfExists('novels');
         Schema::create('novels', function (Blueprint $table) {
             $table->increments('id');
             $table->string('author');

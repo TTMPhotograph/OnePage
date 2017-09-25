@@ -6,8 +6,9 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use Auth;
 use Socialite;
+use App\Novels;
 use App\User;
-class HomeController extends Controller
+class BookshelfController extends Controller
 {
     /**
      * Create a new controller instance.
@@ -28,7 +29,8 @@ class HomeController extends Controller
     public function index()
     {
          $novels = "";
-       $novels = DB::table('novels')->get();
+       // $novels = DB::table('novels')->get();
+       $novels = Novels::all();   // Eloquent"Novels"で全データ取得
         return view('bookshelf',['novels' => $novels]);
     }
   

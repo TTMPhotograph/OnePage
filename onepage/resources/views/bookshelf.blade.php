@@ -23,10 +23,8 @@
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
-                <div class="panel-heading"> 本棚</div>
-
+                <div class="panel-heading"> 作者</div>
                 <div class="panel-body">
-                    <p>{{$username}}</p> 
                     @if (session('status'))
                         <div class="alert alert-success">
                             {{ session('status') }}
@@ -57,14 +55,36 @@
                            <tr>
                            <th>updated_at:</th><td> {{Auth::User()->updated_at}} </td>
                            </tr>
-<th>
-                        </tr>
-                    </table>
+                         </table>
                      <!-- /.table --> 
                     You are logged in!
                 </div>
             </div>
+            <h3>本棚</h3>
+            <table class="table table-hover table-bordered">
+                <thead>
+                    <tr>
+                        <th>タイトル</th>
+                        <th>作成日</th>
+                        <th>公開日</th>
+                        <th>更新日</th>
+                    </tr>
+                </thead>
+                <tbody>
+                @foreach ($novels as $novel)
+                    <tr>
+                        <td>{{$novel->title}}</td>
+                        <td>{{$novel->created_at}}</td>
+                        <td>{{$novel->published_at or "未公開"}}</td>
+                        <td>{{$novel->updated_at or ""}}</td>
+                    </tr>
+                @endforeach
+                </tbody>
+            </table>
         </div>
     </div>
 </div>
 @endsection
+           
+                 
+                

@@ -17,10 +17,10 @@ Route::get('/writing','WritingController@doWriting');
 /*または編集ページ表示*/
 Route::get('/edit','WritingController@doEdit');
 // ログアウト処理のルーティング
-Route::get('/logout', array('uses' => 'HomeController@doLogout'));
+Route::get('/logout', array('uses' => 'BookshelfController@doLogout'));
 Auth::routes();
 // 本棚表示
- Route::get('/bookshelf', 'HomeController@index')->name('bookshelf');
+ Route::get('/bookshelf', 'BookshelfController@index')->name('bookshelf');
  // Route::get('/home', 'HomeController@index')->name('home');
 // Twitterログイン
 Route::get('auth/twitter', 'Auth\AuthController@redirectToProvider');

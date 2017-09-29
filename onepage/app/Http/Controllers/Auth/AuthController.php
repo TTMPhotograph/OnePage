@@ -39,7 +39,7 @@ class AuthController extends Controller
         //     . "<br/><br/>";
         // OAuth Two Providers
       //$response .= print_r($user, true);
-        // return $response;
+       //return $response;
     }
     public function findOrCreateUser($user,$provider){
         //usersをidで検索

@@ -13,7 +13,8 @@
 /*トップページ表示*/
 Route::get('/', 'TopController@index');
 /*新規投稿*/
-Route::get('/writing','WritingController@doWriting');
+Route::get('/writing','WritingController@index');
+Route::post('/writing','WritingController@doWriting');
 /*または編集ページ表示*/
 Route::get('/edit','WritingController@doEdit');
 // ログアウト処理のルーティング

@@ -13,10 +13,10 @@ class TopController extends Controller
 
     //TOP表示
 	public function index(){
-		$user = isset(Auth::user()->id)?Auth::user()->id:"";
-		if ($user !=="") {
-		 return Redirect::to('bookshelf');
-		}
+		// $user = isset(Auth::user()->id)?Auth::user()->id:"";
+		// if ($user !=="") {
+		//  return Redirect::to('bookshelf');
+		// }
 		return view('top');
 	}
 }

@@ -83,7 +83,7 @@ return [
     */
     'custom' => [
         'attribute-name' => [
-            'item_name' => '本のタイトル',
+            'title' => '本のタイトル',
         ],
     ],
     /*
@@ -96,7 +96,7 @@ return [
     | of "email". This simply helps us make messages a little cleaner.
     |
     */
-    'attributes' => [   'item_name' => '本のタイトル', 
+    'attributes' => [   'title' => 'タイトル', 
                                 'item_number' => '購入冊数', 
                                 'item_amount' => '金額', 
                                 'published' => '出版日',

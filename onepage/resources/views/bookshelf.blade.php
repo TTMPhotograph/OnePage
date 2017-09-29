@@ -43,9 +43,9 @@
                            <tr>
                            <th>provider:</th><td> {{Auth::User()->provider}} </td>
                            </tr>
-                          <!--  <tr>
+                           <tr>
                            <th>provider_id:</th><td> {{Auth::User()->provider_id}} </td>
-                           </tr> -->
+                           </tr>
                            <!-- <tr>
                            <th>remember_token:</th><td> {{Auth::User()->remember_token}} </td>
                            </tr> -->

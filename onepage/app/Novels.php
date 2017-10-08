@@ -12,4 +12,5 @@ class Novels extends Model
       * @var string
       */
      protected $table = 'novels';
+     protected $guarded = array('id');
 }

@@ -1,5 +1,4 @@
 <?php
-
 namespace App\Http\Controllers;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\DB;
@@ -29,8 +28,10 @@ class BookshelfController extends Controller
     public function index()
     {
          $novels = "";
+         $author = "";
+         $author = Auth::User()->id;
        // $novels = DB::table('novels')->get();
-       $novels = Novels::all();   // Eloquent"Novels"で全データ取得
+       $novels = Novels::where('author', '=', $author )->paginate(5); // Eloquent"Novels"で全データ取得
         return view('bookshelf',['novels' => $novels]);
     }
   

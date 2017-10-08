@@ -1,5 +1,5 @@
 <?php
-
+use App\Novels;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -17,6 +17,9 @@ Route::get('/writing','WritingController@index');
 Route::post('/writing','WritingController@doWriting');
 /*または編集ページ表示*/
 Route::get('/edit','WritingController@doEdit');
+/*本棚の削除*/
+Route::delete('/delete/{novel}','WritingController@doDel');
+//Modelインスタンス = モデル::findOrFail($id);
 // ログアウト処理のルーティング
 Route::get('/logout', array('uses' => 'BookshelfController@doLogout'));
 Auth::routes();

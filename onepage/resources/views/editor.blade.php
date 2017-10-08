@@ -10,6 +10,8 @@ OnePage新規投稿
 	<div class="well">
 		<form role="form" method="POST">
 			{{ csrf_field() }}
+			{{$id or ''}}
+			{{Form::hidden('id',isset($id) ? $id : '' )}}
 			<fieldset>
 				<!-- Form Name -->
 				<legend class="logo">新規小説作成</legend>
@@ -20,7 +22,7 @@ OnePage新規投稿
 						<small>＊<span class="counttitle">0</span>文字/100文字以内</small>
 					</p>
 					<!-- /.pull-right -->
-					<input id="title" class="form-control input-md" name="title" value=""type="text" placeholder="タイトル100文字以内" >
+					<input id="title" class="form-control input-md" name="title" value="{{$title or ""}}" type="text" placeholder="タイトル100文字以内" >
 				</div>
 				<!-- Textarea -->
 				<div class="form-group m-t30">
@@ -37,11 +39,11 @@ OnePage新規投稿
 							<div class="pull-right">
 								<small>＊<span class="count">0</span>文字400文字以内</small>
 							</div>     <!-- /.pull-right -->
-							<textarea class="form-control" id="content" name="content" rows="15" ></textarea>
+							<textarea id="content" class="form-control"  name="content" rows="15" >{{$content or ''}}</textarea>
 						</div>
 						<!-- /.tab-pane -->
 						<div role="tabpanel" id="memoeditor" class="tab-pane" >
-							<textarea class="form-control bg-info" id="memo" name="memo" rows="15" ></textarea>
+							<textarea  id="memo"  name="memo" rows="15" >{{$memo or ''}}</textarea>
 						</div>
 					</div><!-- / tabs-content -->
 				</div>

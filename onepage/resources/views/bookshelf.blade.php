@@ -68,6 +68,7 @@
                         <th>作成日</th>
                         <th>公開日</th>
                         <th>更新日</th>
+                        <th>削除</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -77,14 +78,23 @@
                         <td>{{$novel->created_at}}</td>
                         <td>{{$novel->published_at or "未公開"}}</td>
                         <td>{{$novel->updated_at or ""}}</td>
+                        <td>
+                          <form action="{{url('delete/'.$novel->id)}}" method="POST"> 
+                            {{csrf_field()}} {{method_field('DELETE')}}
+                             <button type="submit" class="btn btn-danger">
+                              <i class="glyphicon glyphicon-trash"></i>
+                             </button> 
+                          </form>
+                        </td>
                     </tr>
                 @endforeach
                 </tbody>
             </table>
+            {{$novels->links()}}
         </div>
     </div>
 </div>
 @endsection
            
                  
-                
+              

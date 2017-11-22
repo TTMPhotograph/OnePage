@@ -16,9 +16,13 @@ Route::get('/', 'TopController@index');
 Route::get('/writing','WritingController@index');
 Route::post('/writing','WritingController@doWriting');
 /*または編集ページ表示*/
-Route::get('/edit','WritingController@doEdit');
+Route::post('edit/{id}','WritingController@doEdit');
+
+/*Route::get('/edit/{id}','WritingController@doEdit');*/
 /*本棚の削除*/
 Route::delete('/delete/{novel}','WritingController@doDel');
+/*本の更新機能*/
+Route::post('/update','BooksController@doUpdate');
 //Modelインスタンス = モデル::findOrFail($id);
 // ログアウト処理のルーティング
 Route::get('/logout', array('uses' => 'BookshelfController@doLogout'));

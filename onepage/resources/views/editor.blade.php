@@ -22,7 +22,7 @@ OnePage新規投稿
 						<small>＊<span class="counttitle">0</span>文字/100文字以内</small>
 					</p>
 					<!-- /.pull-right -->
-					<input id="title" class="form-control input-md" name="title" value="{{$title or ""}}" type="text" placeholder="タイトル100文字以内" >
+					<input id="title" class="form-control input-md" name="title" value="{{$title or ''}}" type="text" placeholder="タイトル100文字以内" >
 				</div>
 				<!-- Textarea -->
 				<div class="form-group m-t30">
@@ -43,7 +43,7 @@ OnePage新規投稿
 						</div>
 						<!-- /.tab-pane -->
 						<div role="tabpanel" id="memoeditor" class="tab-pane" >
-							<textarea  id="memo"  name="memo" rows="15" >{{$memo or ''}}</textarea>
+							<textarea  id="memo" class="form-control"  name="memo" rows="15" >{{$memo or ''}}</textarea>
 						</div>
 					</div><!-- / tabs-content -->
 				</div>

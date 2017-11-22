@@ -42,7 +42,7 @@ class WritingController extends Controller
        }else{
         $novel->draft_flag =0;//下書きにしないデフォルト
        }
-
+       	echo "$novel->memo";
         //投稿用Eloquent モデル
        if (empty($novel->id)) {
          $novels = new Novels; 
@@ -54,16 +54,7 @@ class WritingController extends Controller
          $novels->memo = $novel->memo; 
          $novels->save();
        }else{
-        Novels::where('id', '=',$novel->id)->update(
-        ['author' => Auth::User()->id],
-        ['title' => $novel->title],
-        ['content' => $novel->content],
-        ['published_at' => $novel->published_at],
-        ['draft_flag' =>  $novel->draft_flag],
-        ['memo' => $novel->memo]
-        );
-        $novelData = Novels::where('id', $novel->id)->first();
-        $novels = $novelData;
+       		$novels = $this->Updata($novel);
        }
 
         // 「/」 ルートにリダイレクト 
@@ -75,14 +66,28 @@ class WritingController extends Controller
   }
   
 	  // 投稿編集ページ
-    public function doEdit() {
-
-        return view('editor');
+    public function doEdit(Request $noveldata) {
+      $id = $noveldata->id;
+      $noveldata = Novels::find($id);
+      return view('editor',['id'=>$noveldata->id,'title'=>$noveldata->title,'content'=>$noveldata->content,'memo'=>$noveldata->memo]);
     }
+/*    public function doUpdate*/
 
   //投稿削除
     public function doDel(Novels $novel) {
        $novel->delete();
         return redirect('/bookshelf'); 
+    }
+    // 下書き編集共通	
+    public function Updata($noveldata){
+    	$novels = Novels::find($noveldata->id);
+    	$novels->author = Auth::User()->id;
+    	$novels->title = $noveldata->title; 
+    	$novels->content = $noveldata->content; 
+    	$novels->published_at = $noveldata->published_at;
+    	$novels->draft_flag = $noveldata->draft_flag; 
+    	$novels->memo = $noveldata->memo; 
+    	$novels->save();
+    	return $novels;
     }
 }

@@ -74,7 +74,14 @@
                 <tbody>
                 @foreach ($novels as $novel)
                     <tr>
-                        <td>{{$novel->title}}</td>
+                        <td>
+                          <form action="{{url('edit/'.$novel->id)}}" method="POST">
+                           {{csrf_field()}} 
+                           <button type="submit" class="btn btn-primary btn-small">
+                             <i class="glyphicon glyphicon-pencil"></i>
+                           </button>{{$novel->title}} 
+                         </form>
+                       </td>
                         <td>{{$novel->created_at}}</td>
                         <td>{{$novel->published_at or "未公開"}}</td>
                         <td>{{$novel->updated_at or ""}}</td>

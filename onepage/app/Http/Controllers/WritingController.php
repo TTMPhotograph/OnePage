@@ -17,7 +17,7 @@ class WritingController extends Controller
 	    $this->middleware('auth');
 	}
 
-    // TOP表示
+    /* TOP表示 */
 	public function index(){
 		return view('editor');
 	}
@@ -63,22 +63,31 @@ class WritingController extends Controller
          }else{
               return redirect('/bookshelf');
          }
-  }
+    }
   
-	  // 投稿編集ページ
+	  /* 投稿編集ページ */
     public function doEdit(Request $noveldata) {
+    if(isset($_POST['publish']) || isset($_POST['draft'])){
+       //下書きかどうか
+       if ($noveldata->draft =="draft") {
+        $noveldata->draft_flag =1;//下書きとして保存
+       }else{
+        $noveldata->draft_flag =0;//下書きにしないデフォルト
+       }
+        $novels = $this->Updata($noveldata);
+    }else{
       $id = $noveldata->id;
       $noveldata = Novels::find($id);
+    }
+    if(isset($_POST['publish']))return redirect('/bookshelf');
       return view('editor',['id'=>$noveldata->id,'title'=>$noveldata->title,'content'=>$noveldata->content,'memo'=>$noveldata->memo]);
     }
-/*    public function doUpdate*/
-
-  //投稿削除
+  /* 投稿削除 */
     public function doDel(Novels $novel) {
        $novel->delete();
         return redirect('/bookshelf'); 
     }
-    // 下書き編集共通	
+    /* 下書き編集共通 */	
     public function Updata($noveldata){
     	$novels = Novels::find($noveldata->id);
     	$novels->author = Auth::User()->id;

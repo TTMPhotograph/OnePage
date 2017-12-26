@@ -68,19 +68,14 @@
                         <th>作成日</th>
                         <th>公開日</th>
                         <th>更新日</th>
-                        <th>削除</th>
+                        <th>削除/編集</th>
                     </tr>
                 </thead>
                 <tbody>
                 @foreach ($novels as $novel)
                     <tr>
                         <td>
-                          <form action="{{url('edit/'.$novel->id)}}" method="POST">
-                           {{csrf_field()}} 
-                           <button type="submit" class="btn btn-primary btn-small">
-                             <i class="glyphicon glyphicon-pencil"></i>
-                           </button>{{$novel->title}} 
-                         </form>
+                         {{$novel->title}} 
                        </td>
                         <td>{{$novel->created_at}}</td>
                         <td>{{$novel->published_at or "未公開"}}</td>
@@ -92,6 +87,12 @@
                               <i class="glyphicon glyphicon-trash"></i>
                              </button> 
                           </form>
+                          <form action="{{url('edit/'.$novel->id)}}" method="POST">
+                           {{csrf_field()}} 
+                           <button type="submit" class="btn btn-primary btn-small">
+                             <i class="glyphicon glyphicon-pencil"></i>
+                           </button>
+                         </form>
                         </td>
                     </tr>
                 @endforeach

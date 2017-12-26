@@ -1,7 +1,6 @@
 <?php
 
 use Illuminate\Database\Seeder;
-
 class DatabaseSeeder extends Seeder
 {
     /**
@@ -11,6 +10,8 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // $this->call(UsersTableSeeder::class);
+    //faker使う。普通に使う場合と同じ
+     /* $this->call(UsersTableSeeder::class); */
+     $this->call(NovelsTableSeeder::class);
     }
 }

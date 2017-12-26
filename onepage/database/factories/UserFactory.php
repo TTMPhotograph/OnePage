@@ -1,5 +1,5 @@
 <?php
-
+use Faker\Factory as FakerFactory;
 use Faker\Generator as Faker;
 
 /*
@@ -15,11 +15,25 @@ use Faker\Generator as Faker;
 
 $factory->define(App\User::class, function (Faker $faker) {
     static $password;
-
+     $faker = FakerFactory::create('ja_JP');
     return [
-        'name' => $faker->name,
         'email' => $faker->unique()->safeEmail,
+        'name' => $faker->name,
         'password' => $password ?: $password = bcrypt('secret'),
+        'provider' => 'twitter',
+        'provider_id' => $faker->randomNumber($nbDigits = NULL, $strict = false),
+        'remember_token' => str_random(10),
+    ];
+});
+$factory->define(App\Novels::class, function (Faker $faker) {
+    static $password;
+     $faker = FakerFactory::create('ja_JP');
+    return [
+        'email' => $faker->unique()->safeEmail,
+        'name' => $faker->name,
+        'password' => $password ?: $password = bcrypt('secret'),
+        'provider' => 'twitter',
+        'provider_id' => $faker->randomNumber($nbDigits = NULL, $strict = false),
         'remember_token' => str_random(10),
     ];
 });

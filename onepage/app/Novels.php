@@ -9,3 +9,4 @@ class Novels extends Model
     protected $table = 'novels';
      protected $guarded = array('id');
 }
+?>

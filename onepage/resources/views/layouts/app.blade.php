@@ -9,6 +9,7 @@
 	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
 	 crossorigin="anonymous">
 	<link rel="stylesheet" type="text/css" href="{{asset('style.css')}}">
+	<link rel="stylesheet" type="text/css" href="{{asset('css/common.css')}}">
 	<!-- Fonts -->
 	<link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
 	<!-- Fonts -->
@@ -45,8 +46,10 @@
 						@if (Auth::guest())
 						<ul class="nav navbar-nav navbar-right">
 							<li>
-								<a href="{{url('/auth/twitter')}}">
-									<i class="fa fa-key" aria-hidden="true"></i>Login</a>
+								<a href="{{url('/auth/twitter')}}">新規登録</a>
+							</li>
+							<li>
+								<a href="{{url('/auth/twitter')}}">Login</a>
 							</li>
 						</ul>
 						@else

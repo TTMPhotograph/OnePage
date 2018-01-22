@@ -7,14 +7,17 @@
 @section('content')
 <!-- 新規登録エリア -->
 @if (Auth::guest())
-<div class="row">
-    <div class="text-center well">
-        <h1 class="logo">OnePage <small>さっそく書いてみる？</small></h1>
-        <a href="{{url('/auth/twitter')}}" class="btn btn-primary btn-lg"><i class="fa fa-twitter" aria-hidden="true"></i> TwitterでSing inする</a>
-    </div>
-    <!-- /.well -->
-</div>
-<!-- /.row -->
+ <div class="paper">
+       <h1 class="logo">OnePage</h1>
+        <p>
+            ようこそ400文字の小説投稿サイトOnaPageへ
+            <br>  
+            <small>さっそく書いてみる？</small>
+        </p> 
+        <a href="{{url('/auth/twitter')}}" class="btn btn-primary btn-lg">
+            <i class="fa fa-twitter" aria-hidden="true"></i> Twitterでログインする
+        </a>
+</div>    
 
 @endif
 <div class="row">

@@ -1,69 +1,91 @@
-
- /* Sticky footer styles
+/* Sticky footer styles
 -------------------------------------------------- */
+
 html {
-  position: relative;
-  min-height: 100%;
+    position: relative;
+    min-height: 100%;
 }
+
 body {
-  /* Margin bottom by footer height */
-  padding-top:85px;
-  margin-bottom: 40px;
+    /* Margin bottom by footer height */
+    padding-top: 85px;
+    margin-bottom: 40px;
+}
+
+.container {
+    max-width: 940px!important;
+    margin: 0 auto;
 }
 
 .footer {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  /* Set the fixed height of the footer here */
-  height: 40px;
-  background-color: #f5f5f5;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    /* Set the fixed height of the footer here */
+    height: 40px;
+    background-color: #f5f5f5;
     line-height: 2.5;
 }
+
+
 /*ヘッダー
 ---------------------------------------------------*/
-.logo{
--moz-text-shadow: -1px 1px 0px rgba(255, 255, 255, 1);
--webkit-text-shadow: -1px 1px 0px rgba(255, 255, 255, 1);
--ms-text-shadow: -1px 1px 0px rgba(255, 255, 255, 1);
-text-shadow: -1px 1px 0px rgba(255, 255, 255, 1);
+
+.logo {
+    -moz-text-shadow: -1px 1px 0px rgba(255, 255, 255, 1);
+    -webkit-text-shadow: -1px 1px 0px rgba(255, 255, 255, 1);
+    -ms-text-shadow: -1px 1px 0px rgba(255, 255, 255, 1);
+    text-shadow: -1px 1px 0px rgba(255, 255, 255, 1);
 }
 
-.navbar-brand,.logo{
-  font-family: 'Noto400 Serif', serif;
-  color: #000!important;
-  font-weight: 400;
-  font-style: italic;
+.navbar-brand,
+.logo {
+    font-family: 'Noto400 Serif', serif;
+    color: #000!important;
+    font-weight: 400;
+    font-style: italic;
 }
+
+
 /*ナビゲーション
 -------------------------------------------------- */
+
 .navbar {
-  min-height: 40px !important
+    min-height: 40px !important
 }
 
 .navbar-brand {
-  height: 50px;
-  padding: 13px 15px 10px;
+    height: 50px;
+    padding: 13px 15px 10px;
 }
-.navbar-text{
-  margin:15px 0 0;
+
+.navbar-text {
+    margin: 15px 0 0;
 }
-.navbar-nav > li > a {
-  padding-top: 15px !important;
-  padding-bottom: 5px !important;
-  margin-top: 0!important;
-  margin-bottom: 5px!important;
+
+.navbar-nav>li>a {
+    padding-top: 15px !important;
+    padding-bottom: 5px !important;
+    margin-top: 0!important;
+    margin-bottom: 5px!important;
 }
+
+
 /*新規投稿、編集画面  
 -------------------------------------------------- */
-#memo{
-  background-color: #FFFDE7;
+
+#memo {
+    background-color: #FFFDE7;
 }
+
+
 /*レイアウト
 -------------------------------------------------- */
-.m-t15{
-  margin-top: 15px;
+
+.m-t15 {
+    margin-top: 15px;
 }
-.m-t30{
-  margin-top: 30px;
+
+.m-t30 {
+    margin-top: 30px;
 }

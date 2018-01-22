@@ -13,7 +13,7 @@ body {
 }
 
 .container {
-    max-width: 940px!important;
+    max-width: 800px!important;
     margin: 0 auto;
 }
 
@@ -40,10 +40,10 @@ body {
 
 .navbar-brand,
 .logo {
-    font-family: 'Noto400 Serif', serif;
+    font-family: 'Noto400';
     color: #000!important;
+    text-shadow: -1px 1px 0 rgba(255, 255, 255, 1);
     font-weight: 400;
-    font-style: italic;
 }
 
 
@@ -51,7 +51,9 @@ body {
 -------------------------------------------------- */
 
 .navbar {
-    min-height: 40px !important
+    min-height: 40px !important;
+    background: #fff;
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0.15);
 }
 
 .navbar-brand {
@@ -68,6 +70,10 @@ body {
     padding-bottom: 5px !important;
     margin-top: 0!important;
     margin-bottom: 5px!important;
+}
+
+.loginarea {
+    font-size: 12px;
 }
 
 

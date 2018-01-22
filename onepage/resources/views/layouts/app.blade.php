@@ -31,25 +31,18 @@
 							<span class="icon-bar"></span>
 						</button>
 						<a href="{{ url('/') }}" class="navbar-brand logo">
-							OnePage
-							<i class="fa fa-pencil" aria-hidden="true"></i>
+							OnePage<i class="fa fa-pencil" aria-hidden="true"></i>
 						</a>
 					</div>
 					<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-						@if(Request::is('/') and (Auth::guest()))
-						<p class="navbar-text">
-							ようこそ400文字の小説投稿サイト OnaPage
-							<i class="fa fa-pencil" aria-hidden="true"></i>へ
-						</p>
-						@endif
 						<!-- Authentication Links -->
 						@if (Auth::guest())
-						<ul class="nav navbar-nav navbar-right">
+						<ul class="nav navbar-nav navbar-right loginarea">
 							<li>
 								<a href="{{url('/auth/twitter')}}">新規登録</a>
 							</li>
 							<li>
-								<a href="{{url('/auth/twitter')}}">Login</a>
+								<a href="{{url('/auth/twitter')}}">ログイン</a>
 							</li>
 						</ul>
 						@else

@@ -29,7 +29,7 @@
 		<div class="col-md-4">
 			<div class="panel panel-default">
 				<div class="panel-heading">
-					<h2 class="h3">
+					<h2 class="panel-title h5">
 						{{$novel->title}}
 					</h2>
 				</div>
@@ -37,16 +37,18 @@
 					{{$novel->content}}
 				</div>
 				<div class="panel-footer">
-
-					<p class="small">
+					<span class="small">
 						名前：{{$novel->user->name}}
 						<br>
 						投稿日:{{$novel->created_at}}
-					</p>
+					</span>
 				</div>
 			</div>
 		</div>
 		@endforeach
+	</div>
+	<div class="row">
+		{{$novels->fragment('foo')->links() }}
 	</div>
 </div>
 <!-- /#novel-list -->

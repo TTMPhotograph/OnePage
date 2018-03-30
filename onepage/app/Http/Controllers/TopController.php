@@ -14,7 +14,7 @@ class TopController extends Controller
 
     //TOP表示
 	public function index(){
-		$novels = Novels::all();
+		$novels = Novels::paginate(4);
 		return view('top',['novels' => $novels]);
 	}
 }

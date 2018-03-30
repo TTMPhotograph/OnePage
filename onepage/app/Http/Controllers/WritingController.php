@@ -46,7 +46,7 @@ class WritingController extends Controller
         //投稿用Eloquent モデル
        if (empty($novel->id)) {
          $novels = new Novels; 
-         $novels->author = Auth::User()->id;
+         $novels->user_id = Auth::User()->id;
          $novels->title = $novel->title; 
          $novels->content = $novel->content; 
          $novels->published_at = $novel->published_at;
@@ -90,7 +90,7 @@ class WritingController extends Controller
     /* 下書き編集共通 */	
     public function Updata($noveldata){
     	$novels = Novels::find($noveldata->id);
-    	$novels->author = Auth::User()->id;
+    	$novels->user_id = Auth::User()->id;
     	$novels->title = $noveldata->title; 
     	$novels->content = $noveldata->content; 
     	$novels->published_at = $noveldata->published_at;

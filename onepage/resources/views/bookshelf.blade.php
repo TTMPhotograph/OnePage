@@ -68,7 +68,7 @@
                         <td>
                           <form action="{{url('delete/'.$novel->id)}}" method="POST"> 
                             {{csrf_field()}} {{method_field('DELETE')}}
-                             <button type="submit" class="btn btn-danger">
+                             <button type="submit" id="delete" class="btn btn-danger">
                               <i class="glyphicon glyphicon-trash"></i>
                              </button> 
                           </form>

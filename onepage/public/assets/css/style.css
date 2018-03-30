@@ -13,7 +13,7 @@ body {
 }
 
 .container {
-    max-width: 800px!important;
+    max-width: 940px!important;
     margin: 0 auto;
 }
 
@@ -40,10 +40,9 @@ body {
 
 .navbar-brand,
 .logo {
-    font-family: 'Noto400';
-    color: #000!important;
-    text-shadow: -1px 1px 0 rgba(255, 255, 255, 1);
-    font-weight: 400;
+    color: #636b6f;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 100;
 }
 
 
@@ -51,9 +50,7 @@ body {
 -------------------------------------------------- */
 
 .navbar {
-    min-height: 40px !important;
-    background: #fff;
-    box-shadow: 0 0 1px rgba(0, 0, 0, 0.15);
+    min-height: 40px !important
 }
 
 .navbar-brand {
@@ -72,10 +69,6 @@ body {
     margin-bottom: 5px!important;
 }
 
-.loginarea {
-    font-size: 12px;
-}
-
 
 /*新規投稿、編集画面  
 -------------------------------------------------- */
@@ -83,8 +76,10 @@ body {
 #memo {
     background-color: #FFFDE7;
 }
-
-
+/*TOP画面
+-------------------------------------------------- */
+#novel-list{
+    word-wrap: break-word;
 /*レイアウト
 -------------------------------------------------- */
 

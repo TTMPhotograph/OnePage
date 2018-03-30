@@ -5,17 +5,16 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>@yield('title') - 400文字の小説投稿サイト OnePage </title>
-	<link href="{{asset('/css/bootstrap.min.css')}}" rel="stylesheet">
+	<link href="{{asset('assets/css/bootstrap.min.css')}}" rel="stylesheet">
 	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
 	 crossorigin="anonymous">
-	<link rel="stylesheet" type="text/css" href="{{asset('style.css')}}">
-	<link rel="stylesheet" type="text/css" href="{{asset('css/common.css')}}">
+	<link rel="stylesheet" type="text/css" href="{{asset('assets/css/style.css')}}">
+	<link rel="stylesheet" type="text/css" href="{{asset('assets/css/common.css')}}">
 	<!-- Fonts -->
 	<link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
 	<!-- Fonts -->
 	<link href="https://fonts.googleapis.com/css?family=Noto+Serif:400,400i" rel="stylesheet" type="text/css">
 </head>
-
 <body>
 	<header id="header">
 		<nav>
@@ -31,18 +30,19 @@
 							<span class="icon-bar"></span>
 						</button>
 						<a href="{{ url('/') }}" class="navbar-brand logo">
-							OnePage<i class="fa fa-pencil" aria-hidden="true"></i>
+							OnePage
+							<i class="fa fa-pencil" aria-hidden="true"></i>
 						</a>
 					</div>
 					<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 						<!-- Authentication Links -->
 						@if (Auth::guest())
-						<ul class="nav navbar-nav navbar-right loginarea">
+						<ul class="nav navbar-nav navbar-right">
 							<li>
 								<a href="{{url('/auth/twitter')}}">新規登録</a>
 							</li>
 							<li>
-								<a href="{{url('/auth/twitter')}}">ログイン</a>
+								<a href="{{url('/auth/twitter')}}">Login</a>
 							</li>
 						</ul>
 						@else
@@ -119,8 +119,8 @@
 	</footer>
 	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-	<script src="{{asset('/js/bootstrap.min.js')}}" type="text/javascript" charset="utf-8" async defer></script>
-	<script src="{{asset('/js/onepage.js')}}" type="text/javascript" charset="utf-8" async defer></script>
+	<script src="{{asset('assets/js/bootstrap.min.js')}}" type="text/javascript" charset="utf-8" async defer></script>
+	<script src="{{asset('assets/js/onepage.js')}}" type="text/javascript" charset="utf-8" async defer></script>
 </body>
 
 </html>

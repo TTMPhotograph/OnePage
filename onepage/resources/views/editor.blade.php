@@ -18,11 +18,11 @@
 					<p class="pull-right">
 						<small>
 							＊
-							<span class="counttitle">0</span>文字/100文字以内
+							<span class="counttitle">0</span>文字/40文字以内
 						</small>
 					</p>
 					<!-- /.pull-right -->
-					<input id="title" class="form-control input-md" name="title" value="{{$title or ''}}" type="text" placeholder="タイトル100文字以内">
+					<input id="title" class="form-control input-md" name="title" value="{{$title or ''}}" type="text" maxlength='40' placeholder="タイトル40文字以内">
 				</div>
 				<!-- Textarea -->
 				<div class="form-group m-t30">
@@ -41,7 +41,7 @@
 									<span class="count">0</span>文字400文字以内</small>
 							</div>
 							<!-- /.pull-right -->
-							<textarea id="content" class="form-control" name="content" rows="15">{{$content or ''}}</textarea>
+							<textarea id="content" class="form-control" name="content" rows="15" maxlength="400">{{$content or ''}}</textarea>
 						</div>
 						<!-- /.tab-pane -->
 						<div role="tabpanel" id="memoeditor" class="tab-pane">

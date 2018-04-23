@@ -2,29 +2,29 @@
 -------------------------------------------------- */
 
 html {
-    position: relative;
-    min-height: 100%;
+	position: relative;
+	min-height: 100%;
 }
 
 body {
-    /* Margin bottom by footer height */
-    padding-top: 85px;
-    margin-bottom: 40px;
+	/* Margin bottom by footer height */
+	padding-top: 60px;
+	margin-bottom: 40px;
 }
 
 .container {
-    max-width: 940px!important;
-    margin: 0 auto;
+	max-width: 940px!important;
+	margin: 0 auto;
 }
 
 .footer {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    /* Set the fixed height of the footer here */
-    height: 40px;
-    background-color: #f5f5f5;
-    line-height: 2.5;
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	/* Set the fixed height of the footer here */
+	height: 40px;
+	background-color: #f5f5f5;
+	line-height: 2.5;
 }
 
 
@@ -32,17 +32,17 @@ body {
 ---------------------------------------------------*/
 
 .logo {
-    -moz-text-shadow: -1px 1px 0px rgba(255, 255, 255, 1);
-    -webkit-text-shadow: -1px 1px 0px rgba(255, 255, 255, 1);
-    -ms-text-shadow: -1px 1px 0px rgba(255, 255, 255, 1);
-    text-shadow: -1px 1px 0px rgba(255, 255, 255, 1);
+	-moz-text-shadow: -1px 1px 0px rgba(255, 255, 255, 1);
+	-webkit-text-shadow: -1px 1px 0px rgba(255, 255, 255, 1);
+	-ms-text-shadow: -1px 1px 0px rgba(255, 255, 255, 1);
+	text-shadow: -1px 1px 0px rgba(255, 255, 255, 1);
 }
 
 .navbar-brand,
 .logo {
-    color: #636b6f;
-    font-family: 'Raleway', sans-serif;
-    font-weight: 100;
+	color: #636b6f;
+	font-family: 'Raleway', sans-serif;
+	font-weight: 100;
 }
 
 
@@ -50,23 +50,28 @@ body {
 -------------------------------------------------- */
 
 .navbar {
-    min-height: 40px !important
+	min-height: 40px !important
 }
 
 .navbar-brand {
-    height: 50px;
-    padding: 13px 15px 10px;
+	height: 50px;
+	padding: 13px 15px 10px;
 }
 
 .navbar-text {
-    margin: 15px 0 0;
+	margin: 15px 0 0;
 }
 
 .navbar-nav>li>a {
-    padding-top: 15px !important;
-    padding-bottom: 5px !important;
-    margin-top: 0!important;
-    margin-bottom: 5px!important;
+	padding-top: 15px !important;
+	padding-bottom: 5px !important;
+	margin-top: 0!important;
+	margin-bottom: 5px!important;
+}
+
+.navbar.navbar-default .navbar-nav>li:not(.active)>a:hover,
+.navbar.navbar-inverse .navbar-nav>li:not(.active)>a:hover {
+	color: #7b7a7a;
 }
 
 
@@ -74,19 +79,88 @@ body {
 -------------------------------------------------- */
 
 #memo {
-    background-color: #FFFDE7;
+	background-color: #FFFDE7;
 }
+
+
 /*TOP画面
 -------------------------------------------------- */
-#novel-list{
-    word-wrap: break-word;
+
+#novel-list {
+	word-wrap: break-word;
+}
+#category-list{
+	display: inline-block;
+}
+
 /*レイアウト
 -------------------------------------------------- */
 
 .m-t15 {
-    margin-top: 15px;
+	margin-top: 15px;
 }
 
 .m-t30 {
-    margin-top: 30px;
+	margin-top: 30px;
+}
+
+
+/*パーツ
+-------------------------------------------------- */
+
+.paper {
+	background: url(../img/paper.jpeg);  
+	background-position: top center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	
+}
+
+.box-shadow {
+	padding: 15px;
+	border-radius: 3px;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	box-shadow: rgba(113, 135, 164, 0.278431) 0px 0px 4px 0px;
+	-webkit-box-shadow: rgba(113, 135, 164, 0.278431) 0px 0px 4px 0px;
+	-moz-box-shadow: rgba(113, 135, 164, 0.278431) 0px 0px 4px 0px;
+}
+
+.btn-radius {
+	-webkit-border-radius: 28;
+	-moz-border-radius: 28;
+	border-radius: 28px;
+	padding: 10px 20px 10px 20px;
+	text-decoration: none;
+}
+.label-radius{
+	border-radius: 10px;
+}
+
+/*レスポンシブ（メディアクエリ）
+-------------------------------------------------- */
+@media (min-width: 768px) {
+	.container-sm {
+		width: 610px;
+		margin-left: auto;
+		margin-right: auto;
+	}
+	.jumbotron {
+		padding-bottom: 160px;
+	}
+	.jumbotron p{
+	font-size: 20px;
+	}
+}
+@media(max-width:768px){
+	.navbar{
+		height: 51px;
+	}
+	.navbar-toggle {
+		margin-top: 10px;
+		margin-bottom: 10px;
+	}
+	.navbar-default .navbar-collapse{
+		background: #fff;
+	}
 }

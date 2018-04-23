@@ -9,7 +9,6 @@
 	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
 	 crossorigin="anonymous">
 	<link rel="stylesheet" type="text/css" href="{{asset('assets/css/style.css')}}">
-	<link rel="stylesheet" type="text/css" href="{{asset('assets/css/common.css')}}">
 	<!-- Fonts -->
 	<link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
 	<!-- Fonts -->
@@ -37,7 +36,7 @@
 					<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 						<!-- Authentication Links -->
 						@if (Auth::guest())
-						<ul class="nav navbar-nav navbar-right">
+						<ul class="nav navbar-nav navbar-right h6">
 							<li>
 								<a href="{{url('/auth/twitter')}}">新規登録</a>
 							</li>
@@ -48,7 +47,6 @@
 						@else
 						<ul class="navbar-nav nav">
 							@if(Request::is('bookshelf'))
-
 							<li>
 								<a href="/writing" title="新規投稿する">
 									<i class="fa fa-pencil-square-o" aria-hidden="true"></i>

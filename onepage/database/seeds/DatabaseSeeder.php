@@ -12,6 +12,7 @@ class DatabaseSeeder extends Seeder
     {
     //faker使う。普通に使う場合と同じ
      /* $this->call(UsersTableSeeder::class); */
-     $this->call(NovelsTableSeeder::class);
+     /*$this->call(NovelsTableSeeder::class);*/
+     $this->call(GenreTableSeeder::class);
     }
 }

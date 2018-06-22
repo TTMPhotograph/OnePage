@@ -34,7 +34,7 @@
 							<i class="fa fa-sticky-note-o" aria-hidden="true"></i>メモ帳
 						</a>
 					</label>
-					<div class="tab-content">
+					<div class="form-group tab-content">
 						<div id="writingeditor" class="tab-pane active">
 							<div class="pull-right">
 								<small>＊
@@ -49,6 +49,15 @@
 						</div>
 					</div>
 					<!-- / tabs-content -->
+					<div class="form-group">
+					<label class="control-label" for="selectgenre">ジャンルを選択して下さい。</label>
+					<select id="selectgenre"  class="form-control" name="__genre">
+					@foreach($genre as $index => $name)
+						<option value="value="{{ $index }}" @if(old('__genre') == $index) selected @endif">{{$name->genrename}}</option>
+					@endforeach
+					</select>
+					</div>
+					<!-- / genre-content -->
 				</div>
 				<!-- Button (Double) -->
 				<div class="form-group">

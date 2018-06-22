@@ -12,4 +12,11 @@ class Novels extends Model
 		return $this->belongsTo(User::class)->withDefault();
 	}
 }
+
+class Genre extends Model
+{
+	protected $table = 'genre';
+	protected $guarded = array('id');
+	
+}
 ?>

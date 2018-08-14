@@ -11,6 +11,9 @@ class Novels extends Model
 	public function user() {
 		return $this->belongsTo(User::class)->withDefault();
 	}
+	public function genre() {
+		return $this->hasOne(Genre::class ,'id', 'genre_id')->withDefault();
+	}
 }
 
 class Genre extends Model

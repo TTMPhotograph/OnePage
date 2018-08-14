@@ -4,27 +4,26 @@
 	<div class="col-xs-12">
 		<ul id="category-list" class="nav nav-pills">
 			<li role="presentation" class="active"><a href="#"><i class="fa fa-home" aria-hidden="true"></i></a></li>
-			<li role="presentation"><a href="#">男性向け</a></li>
-			<li role="presentation"><a href="#">女性向け</a></li>
-			<li role="presentation"><a href="#">男性向け</a></li>
-			<li role="presentation"><a href="#">女性向け</a></li>
+			@foreach($genre as $index => $name)
+			<li role="presentation"><a href="#{{ $index+1 }}">{{$name->genrename}}</a></li>
+			@endforeach
 		</ul>
-		<form class="form-inline pull-right">
+		{{-- <form class="form-inline pull-right">
 			<div class="form-group">
 				<div class="input-group">
 					<input type="text" class="form-control">
 					<span class="input-group-addon"><i class="fa fa-search" aria-hidden="true"></i></span>
 				</div>
 			</div>
-		</form>
+		</form> --}}
 	</div><!-- /.col-xs-12 -->
 	<div class="col-xs-12">
-		<span class="label label-radius label-default">New</span><span class="label label-radius label-default">Default</span>
+		{{-- <span class="label label-radius label-default">New</span><span class="label label-radius label-default">Default</span>
 		<span class="label label-radius label-primary">Primary</span>		<span class="label label-radius label-primary">Primary</span>		<span class="label label-radius label-primary">Primary</span>		<span class="label label-radius label-primary">Primary</span>		<span class="label label-radius label-primary">Primary</span>
 		<span class="label label-radius label-success">Success</span>
 		<span class="label label-radius label-info">Info</span>
 		<span class="label label-radius label-warning">Warning</span>
-		<span class="label label-radius label-danger">Danger</span>
+		<span class="label label-radius label-danger">Danger</span> --}}
 	</div><!-- /.col-xs-12 -->
 </div><!-- /.row -->
 @if (Auth::guest())
@@ -64,6 +63,8 @@
 						名前：{{$novel->user->name}}
 						<br>
 						投稿日:{{$novel->created_at}}
+						<br>
+						カテゴリ:{{$novel->genre->genrename}}
 					</span>
 				</div>
 			</div>

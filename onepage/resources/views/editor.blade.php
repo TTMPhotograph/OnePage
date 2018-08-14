@@ -51,9 +51,9 @@
 					<!-- / tabs-content -->
 					<div class="form-group">
 					<label class="control-label" for="selectgenre">ジャンルを選択して下さい。</label>
-					<select id="selectgenre"  class="form-control" name="__genre">
+					<select id="selectgenre"  class="form-control" name="genre_id">
 					@foreach($genre as $index => $name)
-						<option value="value="{{ $index }}" @if(old('__genre') == $index) selected @endif">{{$name->genrename}}</option>
+						<option value= "{{ $index+1 }}" @if(old('genre_id') == $index) selected @endif>{{$name->genrename}}</option>
 					@endforeach
 					</select>
 					</div>

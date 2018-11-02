@@ -5,7 +5,7 @@
 		<ul id="category-list" class="nav nav-pills">
 			<li role="presentation" class="active"><a href="#"><i class="fa fa-home" aria-hidden="true"></i></a></li>
 			@foreach($genre as $index => $name)
-			<li role="presentation"><a href="#{{ $index+1 }}">{{$name->genrename}}</a></li>
+			<li role="presentation"><a href="/?genre={{ $index+1 }}">{{$name->genrename}}</a></li>
 			@endforeach
 		</ul>
 		{{-- <form class="form-inline pull-right">
@@ -47,8 +47,13 @@
 @endif
 <div id="novel-list" class="container-sm">
 	<div class="row">
+	@if(count($novels) == 0)
+	<div class="col-xs-12">
+		<strong>投稿がまだありません。</strong>
+	</div>		
+	@endif
 		@foreach($novels as $novel)
-		<div class="col-md-6">
+		<div class="col-md-12">
 			<div class="panel panel-default">
 				<div class="panel-heading">
 					<h2 class="panel-title h5">
@@ -58,14 +63,8 @@
 				<div class="panel-body">
 					{{$novel->content}}
 				</div>
-				<div class="panel-footer">
-					<span class="small">
-						名前：{{$novel->user->name}}
-						<br>
-						投稿日:{{$novel->created_at}}
-						<br>
-						カテゴリ:{{$novel->genre->genrename}}
-					</span>
+				<div class="panel-footer small">
+						名前：{{$novel->user->name}}  カテゴリ:{{$novel->genre->genrename}}<span class="pull-right">投稿日:{{$novel->created_at}}</span>
 				</div>
 			</div>
 		</div>
@@ -74,7 +73,7 @@
 </div><!-- /.container-sm -->
 	<div class="container-sm">
 		<div class="row">
-			{{$novels->fragment('page')->links() }}
+			{{$novels->appends(Request::except('page'))->links() }}
 		</div>
 	</div>
 	<!-- /.container-sm -->

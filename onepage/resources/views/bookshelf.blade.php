@@ -8,7 +8,10 @@
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
-                <div class="panel-heading"> 作者</div>
+                <div class="panel-heading"> 
+                    作者
+                <span class="pull-right small"> 作者名を編集する</span>
+                </div>
                 <div class="panel-body">
                     @if (session('status'))
                         <div class="alert alert-success">
@@ -20,26 +23,15 @@
                          <th> ID:</th><td> {{Auth::User()->id}} </td>
                           </tr>
                           <tr>
-                          <th> 作者名:</th><td> {{Auth::User()->name}} </td>
+                          <th> 作者名:</th>
+                            <td>
+                                 <div id="username">{{Auth::User()->name}}</div>
+                                 <input type="text" id="username-edit" class="form-control input-md" name="username" value="" style="display:none;">
+                            </td>
                            </tr>
-                          <!--  <tr>
-                           <th>EMAIL:</th><td> {{Auth::User()->email}} </td>
-                           </tr>
-                           <tr>
-                           <th>provider:</th><td> {{Auth::User()->provider}} </td>
-                           </tr>
-                           <tr>
-                           <th>provider_id:</th><td> {{Auth::User()->provider_id}} </td>
-                           </tr> -->
-                           <!-- <tr>
-                           <th>remember_token:</th><td> {{Auth::User()->remember_token}} </td>
-                           </tr> -->
                            <tr>
                            <th>登録日:</th><td> {{Auth::User()->created_at}} </td>
-                           </tr><!-- 
-                           <tr>
-                           <th>updated_at:</th><td> {{Auth::User()->updated_at}} </td>
-                           </tr> -->
+                           </tr>
                          </table>
                      <!-- /.table --> 
                     You are logged in!

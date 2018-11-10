@@ -7,7 +7,7 @@
 @include('errors.errors')
 <div class="col-md-8 col-md-offset-2">
 	<div class="well">
-		<form role="form" method="POST">
+		<form id="write" role="form" method="POST">
 			{{ csrf_field() }} {{Form::hidden('id',isset($id) ? $id : '' )}}
 			<fieldset>
 				<!-- Form Name -->

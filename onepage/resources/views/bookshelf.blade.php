@@ -10,7 +10,7 @@
             <div class="panel panel-default">
                 <div class="panel-heading"> 
                     作者
-                <span class="pull-right small"> 作者名を編集する</span>
+                <span id="user" class="pull-right small"> 作者名を変更する</span>
                 </div>
                 <div class="panel-body">
                     @if (session('status'))
@@ -25,8 +25,11 @@
                           <tr>
                           <th> 作者名:</th>
                             <td>
-                                 <div id="username">{{Auth::User()->name}}</div>
-                                 <input type="text" id="username-edit" class="form-control input-md" name="username" value="" style="display:none;">
+                                 <div class="username">{{Auth::User()->name}}</div>
+                                   <form id="username-update" method="POST">
+                                       {{ csrf_field() }}
+                                       <input type="text" id="username-edit" class="form-control input-md" name="username" value="" style="display:none;">
+                                   </form>
                             </td>
                            </tr>
                            <tr>

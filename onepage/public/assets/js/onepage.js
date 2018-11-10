@@ -1,19 +1,19 @@
 $(function() {
-    window.addEventListener('load', function() {
-        counttext();
-        counttitle();
-        console.log($(this));
+    $(window).bind('load', function() {
+        if ($('#write').length) {
+            counttitle();
+            counttext();
+        }
     });
-    $('#content').bind('keydown keyup keypress change', function() {
+    $('#content').bind('load keydown keyup keypress change', function() {
         counttext();
     });
-    $('#title').bind('keydown keyup keypress change', function() {
+    $('#title').bind('load keydown keyup keypress change', function() {
         counttitle();
     });
 
     function counttext() {
-        var contentVal = $('#content').val();
-        var thisValueLength = contentVal.replace(/\s+/g, '').length;
+        var thisValueLength = $('#content').val().replace(/\s+/g, '').length;
         $('.count').html(thisValueLength);
     };
 
@@ -22,6 +22,12 @@ $(function() {
         $('.counttitle').html(thisValueLength);
     };
 });
+// 特定の要素が完全に読み込み終了したら発動
+$('form').bind("load", function(event) {
+
+    alert('jQuery');
+});
+
 $('#delete').click(function() {
     if (!confirm('本当に削除しますか？一度消すと復活できません。')) {
         /* キャンセルの時の処理 */
@@ -31,16 +37,27 @@ $('#delete').click(function() {
         location.href = 'index.html';
     }
 });
-$('#username').click(function() {
-    $('#username').css('display', 'none');
+$('#user').click(function() {
+    $('.username').css('display', 'none');
     $('#username-edit')
-        .val($('#username').text())
+        .val($('.username').text())
         .css('display', '')
         .focus();
 });
 $('#username-edit').blur(function() {
     $('#username-edit').css('display', 'none');
-    $('#username')
-        .text($('#username-edit').val())
-        .css('display', '');
+    inputVal = $('#username-edit').val();
+    if (inputVal === '') {
+        inputVal = $('.username').text();
+    };
+    $('#username-update').submit();
+    $('.username').text(inputVal).css('display', '');
+});
+$('#username-edit').keypress(function(e) {
+    if (e.which == 13) {
+        $('#username-edit').css('display', 'none');
+        $('.username')
+            .text($('#username-edit').val())
+            .css('display', '');
+    }
 });

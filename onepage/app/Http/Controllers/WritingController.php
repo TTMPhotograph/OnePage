@@ -50,7 +50,7 @@ class WritingController extends Controller
         }
         //投稿用Eloquent モデル
         if (empty($novel->id)) {
-            echo $novel->genre_id;
+            $novel->genre_id;
             $novels = new Novels;
             $novels->user_id = Auth::User()->id;
             $novels->title = $novel->title;
